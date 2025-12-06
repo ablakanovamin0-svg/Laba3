@@ -15,6 +15,9 @@ public class Comparison {
     public void setCount(int operationCount) {
         count = operationCount;
     }
+    public int getCount() {
+        return count;
+    }
     private double addFirstTime(List<Integer> list) {
         long startTime = System.nanoTime();
         for (int i = 0; i < count; i++) {
@@ -109,5 +112,22 @@ public class Comparison {
         long startTime = System.nanoTime();
         list.clear();
         return (System.nanoTime() - startTime) / 1000000.0;
+    }
+    public void compare() {
+        System.out.println("Сравнение производительности ArrayList и LinkedList");
+        System.out.printf("| %-30s | %-19s | %-14s | %-15s |\n", "Метод", "Количество операций",
+                "ArrayList (мс)", "LinkedList (мс)");
+        List<Integer> arrayList = new ArrayList<>();
+        List<Integer> linkedList = new LinkedList<>();
+        System.out.printf("%-25s  %-19s  %-14s  %-15s \n", "Удаление из начала", count, deleteFirstTime(arrayList), deleteFirstTime(linkedList));
+        System.out.printf("%-30s  %-19s  %-14s  %-15s \n", "Удаление из середины", count, deleteMiddleTime(arrayList), deleteMiddleTime(linkedList));
+        System.out.printf("%-30s  %-19s  %-14s  %-15s \n", "Удаление из конца", count, deleteLastTime(arrayList), deleteLastTime(linkedList));
+        System.out.printf("%-30s  %-19s  %-14s  %-15s \n", "Добавление в начало", count, addFirstTime(arrayList), addFirstTime(linkedList));
+        System.out.printf("%-30s  %-19s  %-14s  %-15s \n", "Добавление в середину", count, addMiddleTime(arrayList), addMiddleTime(linkedList));
+        System.out.printf("%-30s  %-19s  %-14s  %-15s \n", "Добавление в конец", count, addLastTime(arrayList), addLastTime(linkedList));
+        System.out.printf("%-30s  %-19s  %-14s  %-15s \n", "Получение элемента", count, getElemTime(arrayList), getElemTime(linkedList));
+        System.out.printf("%-30s  %-19s  %-14s  %-15s \n", "Использование итераторов", count, iterationTime(arrayList), iterationTime(linkedList));
+        System.out.printf("%-30s  %-19s  %-14s  %-15s \n", "Поиск элемента", count, containsTime(arrayList), containsTime(linkedList));
+        System.out.printf("%-30s  %-19s  %-14s  %-15s \n", "Очистка списка", count, clearTime(arrayList), clearTime(linkedList));
     }
 }
