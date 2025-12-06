@@ -9,7 +9,7 @@ public class Main {
     /**
      * Показ функционала методов класса Comparison
      */
-    public static void main() {
+    public static void main(String[] args) {
         Comparison comparison = new Comparison();
         comparison.compare();
     }
