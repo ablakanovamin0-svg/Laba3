@@ -99,4 +99,12 @@ public class Comparison {
         }
         return (System.nanoTime() - startTime) / 1000000.0;
     }
+    private double clearTime(List<Integer> list) {
+        for (int i = 0; i < count; i++) {
+            list.add(i);
+        }
+        long startTime = System.nanoTime();
+        list.clear();
+        return (System.nanoTime() - startTime) / 1000000.0;
+    }
 }
