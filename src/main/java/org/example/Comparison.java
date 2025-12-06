@@ -56,4 +56,14 @@ public class Comparison {
         }
         return (System.nanoTime() - startTime) / 1000000.0;
     }
+    private double deleteLastTime(List<Integer> list) {
+        for (int i = 0; i < count; i++) {
+            list.add(i);
+        }
+        long startTime = System.nanoTime();
+        for (int i = count - 1; i >= 0; i--) {
+            list.remove(i);
+        }
+        return (System.nanoTime() - startTime) / 1000000.0;
+    }
 }
