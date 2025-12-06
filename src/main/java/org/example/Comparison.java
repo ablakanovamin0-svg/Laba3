@@ -8,7 +8,8 @@ import java.util.List;
  * Класс алгоритма по
  * сравнению производительности
  * ArrayList и LinkedList
- *
+ * @author ablakanovamin0-svg
+ * @version 1.0
  */
 public class Comparison {
     private int count;
