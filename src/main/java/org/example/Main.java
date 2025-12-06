@@ -1,7 +1,15 @@
 package org.example;
 
+/**
+ * Класс для показа функционала объекта созданного класса Comparison
+ * @author ablakanovamin0-svg
+ * @version 1.0
+ */
 public class Main {
-    public static void main(String[] args) {
+    /**
+     * Показ функционала методов класса Comparison
+     */
+    public static void main() {
         Comparison comparison = new Comparison();
         comparison.compare();
     }
