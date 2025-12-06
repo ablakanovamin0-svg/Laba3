@@ -12,5 +12,11 @@ public class Comparison {
     public Comparison(int operationCount) {
         count = operationCount;
     }
-
+    private double addFirstTime(List<Integer> list) {
+        long startTime = System.nanoTime();
+        for (int i = 0; i < count; i++) {
+            list.add(0, i);
+        }
+        return (System.nanoTime() - startTime) / 1000000.0;
+    }
 }
