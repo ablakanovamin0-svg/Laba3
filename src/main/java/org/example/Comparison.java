@@ -19,4 +19,11 @@ public class Comparison {
         }
         return (System.nanoTime() - startTime) / 1000000.0;
     }
+    private double addLastTime(List<Integer> list) {
+        long startTime = System.nanoTime();
+        for (int i = 0; i < count; i++) {
+            list.add(i);
+        }
+        return (System.nanoTime() - startTime) / 1000000.0;
+    }
 }
